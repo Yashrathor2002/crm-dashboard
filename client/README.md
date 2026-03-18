@@ -1,16 +1,79 @@
-# React + Vite
+# CRM Pro — Sales CRM Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready CRM built with the MERN stack. Manage leads, track tasks, and visualize your sales pipeline — all in one place.
 
-Currently, two official plugins are available:
+🔗 **Live Demo:** [crm-dashboard-six.vercel.app](https://crm-dashboard-six.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## What it does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔐 **Secure auth** — JWT stored in httpOnly cookies, role-based access (Admin / Manager / Agent)
+- 👥 **Leads management** — Add, edit, search, filter and paginate leads. All filtering happens server-side in MongoDB.
+- ✅ **Task system** — Create tasks with priorities, due dates, and lead links. Overdue tasks highlighted automatically.
+- 📊 **Live dashboard** — Stats cards and charts powered by MongoDB aggregation pipelines.
+- 📝 **Notes timeline** — Log notes against any lead with author and timestamp.
+- 🔔 **Browser reminders** — Get notified when a task is due within 24 hours.
+- 🌙 **Dark / Light mode** — Theme persists across sessions.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Built with
+
+|             |                                        |
+| ----------- | -------------------------------------- |
+| Frontend    | React 18, Vite, React Router, Recharts |
+| Backend     | Node.js, Express.js                    |
+| Database    | MongoDB Atlas, Mongoose                |
+| Auth        | JWT, bcryptjs, httpOnly cookies        |
+| Deployed on | Vercel + Render                        |
+
+---
+
+## Run it locally
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/Yashrathor2002/crm-dashboard.git
+cd crm-dashboard
+
+# 2. Start the backend
+cd server
+npm install
+# Add your .env file (see below)
+npm run dev
+
+# 3. Start the frontend
+cd ../client
+npm install
+npm run dev
+```
+
+**Server `.env`**
+
+```
+MONGO_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+JWT_EXPIRES_IN=7d
+CLIENT_URL=http://localhost:5173
+NODE_ENV=development
+```
+
+**Client `.env`**
+
+```
+VITE_API_URL=http://localhost:5000/api
+```
+
+---
+
+## Why this project stands out
+
+Most MERN projects stop at basic CRUD. This one goes further —
+server-side filtering, JWT in httpOnly cookies, MongoDB aggregation for analytics,
+browser notifications, and a fully responsive dark/light UI.
+Every decision was made the way a real product would be built.
+
+---
+
+> Built by [Yash Rathor](https://github.com/Yashrathor2002) · Open to frontend / full-stack roles
